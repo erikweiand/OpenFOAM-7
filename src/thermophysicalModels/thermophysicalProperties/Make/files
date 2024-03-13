@@ -59,6 +59,7 @@ solidProperties/solidMixtureProperties/solidMixtureProperties.C
 solidProperties/ash/ash.C
 solidProperties/C/C.C
 solidProperties/CaCO3/CaCO3.C
+solidProperties/Al2O3/Al2O3.C
 
 
 LIB = $(FOAM_LIBBIN)/libthermophysicalProperties

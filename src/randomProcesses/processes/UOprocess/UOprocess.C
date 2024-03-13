@@ -93,6 +93,51 @@ UOprocess::UOprocess
     }
 }
 
+// Erik Weiand - 25/11/2019: with memorized field
+UOprocess::UOprocess
+(
+    const Kmesh& kmesh,
+    const scalar deltaT,
+    const dictionary& UOdict,
+    const complexVectorField initField
+)
+:
+    GaussGen(label(0)),
+    Mesh(kmesh),
+    DeltaT(deltaT),
+    RootDeltaT(sqrt(DeltaT)),
+    UOfield(Mesh.size()),
+
+    Alpha(readScalar(UOdict.lookup("UOalpha"))),
+    Sigma(readScalar(UOdict.lookup("UOsigma"))),
+    Kupper(readScalar(UOdict.lookup("UOKupper"))),
+    Klower(readScalar(UOdict.lookup("UOKlower"))),
+    Scale((Kupper - Klower)*pow(scalar(Mesh.size()), 1.0/vector::dim))
+{
+    const vectorField& K = Mesh;
+
+    scalar sqrKupper = sqr(Kupper);
+    scalar sqrKlower = sqr(Klower) + small;
+    scalar sqrK;
+
+    forAll(UOfield, i)
+    {
+        if ((sqrK = magSqr(K[i])) < sqrKupper && sqrK > sqrKlower)
+        {
+            UOfield[i] = (1.0 - Alpha*DeltaT)*initField[i]
+		+ Scale*Sigma*WeinerProcess();
+        }
+        else
+        {
+            UOfield[i] = complexVector
+            (
+                complex(0, 0),
+                complex(0, 0),
+                complex(0, 0)
+            );
+        }
+    }
+}
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 

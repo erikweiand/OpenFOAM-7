@@ -654,7 +654,6 @@ void Foam::meshToMesh::distributeAndMergeCells
         SubList<label>(tgtCellIDs, cellIDs.size(), cellOffset[proci]) = cellIDs;
     }
 
-
     // Insert internal faces (from internal faces)
     forAll(allFaces, proci)
     {
@@ -694,7 +693,6 @@ void Foam::meshToMesh::distributeAndMergeCells
 
         internalFaceOffset[proci] += allNInternalFaces[proci];
     }
-
 
     // Insert internal faces (from coupled face-pairs)
     forAll(allNbrProcIDs, proci)
@@ -830,7 +828,6 @@ void Foam::meshToMesh::distributeAndMergeCells
             }
         }
     }
-
 
     if (debug)
     {

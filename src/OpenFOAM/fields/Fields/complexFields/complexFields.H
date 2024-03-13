@@ -67,6 +67,10 @@ scalarField ReImSum(const UList<complex>&);
 typedef Field<complexVector> complexVectorField;
 
 complexVectorField ComplexField(const UList<vector>&, const UList<vector>&);
+
+// Erik Weiand - 25/11/2019: vector field usage
+complexVectorField ComplexField(const vectorField&, const vectorField&);
+
 complexVectorField ReComplexField(const UList<vector>&);
 complexVectorField ImComplexField(const UList<vector>&);
 vectorField Re(const UList<complexVector>&);

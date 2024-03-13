@@ -1,0 +1,7 @@
+Erik Weiand - 24/09/19: 
+
+Added multi-region PISO control for fluid and solid phase. Initial purpose is to enable PISO
+usage for DNS simulations with a coexisting mesh for electric field solutions. The electric
+field shall be represented by a solid type class. In the case of an electrostatic field, the
+solution on the solid mesh is performed on an elliptical partial differential equation,
+incorporating no time derivatives.

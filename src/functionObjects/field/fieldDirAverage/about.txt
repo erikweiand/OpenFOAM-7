@@ -1,0 +1,4 @@
+Erik Weiand - 2020/02/15
+
+Averaging method, allowing to obtain average across one direction in layered mesh. 
+Based on combining fieldAverage with the postChannel tool.

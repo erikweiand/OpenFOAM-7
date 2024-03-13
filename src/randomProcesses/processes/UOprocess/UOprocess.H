@@ -85,6 +85,15 @@ public:
             const dictionary&
         );
 
+        //- Construct from wavenumber mesh, timestep and memory field
+        UOprocess
+        (
+            const Kmesh& kmesh,
+            const scalar deltaT,
+            const dictionary&,
+	    const complexVectorField initField
+        );
+
 
     // Member Functions
 

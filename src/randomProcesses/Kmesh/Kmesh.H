@@ -82,6 +82,9 @@ public:
         //- Construct from fvMesh
         Kmesh(const fvMesh&);
 
+	//- Construct from boundBox, corner cell centre and number of cells
+        Kmesh(boundBox box, vector cornerCellCentre, label noCells);
+
 
     // Member Functions
 

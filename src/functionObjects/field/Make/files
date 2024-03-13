@@ -2,6 +2,11 @@ fieldAverage/fieldAverage.C
 fieldAverage/fieldAverageItem/fieldAverageItem.C
 fieldAverage/fieldAverageItem/fieldAverageItemIO.C
 
+fieldDirAverage/fieldDirAverage.C
+fieldDirAverage/channelIndex.C
+fieldDirAverage/fieldDirAverageItem/fieldDirAverageItem.C
+fieldDirAverage/fieldDirAverageItem/fieldDirAverageItemIO.C
+
 fieldCoordinateSystemTransform/fieldCoordinateSystemTransform.C
 fieldMinMax/fieldMinMax.C
 

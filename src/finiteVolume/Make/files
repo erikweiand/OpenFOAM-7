@@ -258,6 +258,7 @@ $(interpolation)/interpolationCellPointFace/makeInterpolationCellPointFace.C
 $(interpolation)/interpolationCellPointWallModified/makeInterpolationCellPointWallModified.C
 $(interpolation)/interpolationPointMVC/pointMVCWeight.C
 $(interpolation)/interpolationPointMVC/makeInterpolationPointMVC.C
+$(interpolation)/interpolationPatchCellConstrained/makeInterpolationPatchCellConstrained.C
 
 volPointInterpolation = interpolation/volPointInterpolation
 $(volPointInterpolation)/volPointInterpolation.C
@@ -422,6 +423,7 @@ $(solutionControl)/solutionControl/nonOrthogonalSolutionControl/nonOrthogonalSol
 $(solutionControl)/solutionControl/fluidSolutionControl/fluidSolutionControl.C
 $(solutionControl)/simpleControl/simpleControl.C
 $(solutionControl)/pisoControl/pisoControl.C
+$(solutionControl)/pisoControl/pisoMultiRegionControl/pisoMultiRegionControl.C
 
 solidControl = $(solutionControl)/solidControl
 $(solidControl)/solidNoLoopControl/solidNoLoopControl.C

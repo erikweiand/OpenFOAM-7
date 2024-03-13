@@ -1,0 +1,3 @@
+dnsEvapFoam.C
+
+EXE = $(FOAM_APPBIN)/dnsEvapFoam

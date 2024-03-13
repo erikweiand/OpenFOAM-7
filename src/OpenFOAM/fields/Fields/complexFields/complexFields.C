@@ -145,6 +145,28 @@ complexVectorField ComplexField
     return cvf;
 }
 
+// Erik Weiand - 25/11/2019: vector field usage
+complexVectorField ComplexField
+(
+    const vectorField& re,
+    const vectorField& im
+)
+{
+    complexVectorField cvf(re.size());
+
+    for (direction cmpt=0; cmpt<vector::nComponents; cmpt++)
+    {
+        forAll(cvf, i)
+        {
+            cvf[i].component(cmpt).Re() = re[i].component(cmpt);
+            cvf[i].component(cmpt).Im() = im[i].component(cmpt);
+        }
+    }
+
+    return cvf;
+}
+
+
 
 complexVectorField ReComplexField(const UList<vector>& vf)
 {

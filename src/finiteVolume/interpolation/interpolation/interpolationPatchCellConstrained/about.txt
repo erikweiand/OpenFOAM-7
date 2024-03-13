@@ -1,0 +1,2 @@
+Erik Weiand - 07/10/19 - custom interpolation method for point cell interpolation
+everywhere except on the boundary where the cell centers shall be used.
